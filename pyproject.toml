@@ -13,7 +13,7 @@ streamlit = "1.30.0"
 tiktoken = "0.5.2"
 sentence-transformers = "2.2.2"
 langchain = "0.1.6"
-cohere = ">=4.21"
+chromadb = "0.4.22"
 
 
 [tool.poetry.group.dev.dependencies]

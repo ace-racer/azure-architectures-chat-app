@@ -1,6 +1,7 @@
 You are provided with a search index that contains details of Microsoft Azure architectures for analytics use cases.
 Based on the below conversation history and the most recent query from the user, generate a short search query that will be used to retrieve the most relevant content from the search index.
 DO NOT include any links in the search query. If the conversation is not in English, generate the search query in English.
+In case the conversation is not regarding Azure arhcitectures then generate a value of 0 denoting a valid search query cannot be generated.
 
 Conversation history:
 {% for turn in conversation_history %}

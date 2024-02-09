@@ -16,6 +16,6 @@ A chat app with Azure architectures to discover answer to architecture questions
 
 
 # Sample conversation
-- what are some ways of supporting high number of concurrent users in Azure?
-- What if the users are distributed across Geographies?
-- What if there are specific geographies with more users only?
+- What are some ways of supporting high number of concurrent users in Azure?
+- What if the users are distributed across geographies?
+- How can we deploy forecasting models in Azure?
