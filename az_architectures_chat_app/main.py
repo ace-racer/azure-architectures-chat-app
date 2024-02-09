@@ -2,6 +2,7 @@ from openai import OpenAI
 import streamlit as st
 from configs import OAI_MODEL, EXPORT_DIR
 from utils import export_current_conversation, num_tokens_from_messages
+from chat import get_final_response
 
 st.title(f"Chat with [{OAI_MODEL}] model using Streamlit")
 st.subheader(f"Conversations will be exported to {EXPORT_DIR}")
@@ -12,7 +13,7 @@ export_button = st.button("Export")
 if export_button:
     export_current_conversation(st.session_state.messages)
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+oai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = OAI_MODEL
@@ -32,12 +33,9 @@ if prompt := st.chat_input("What is up?"):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        for response in client.chat.completions.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]} for m in st.session_state.messages
-            ],
-            stream=True,
+        messages = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
+        for response in get_final_response(
+            oai_client, st.session_state["openai_model"], messages, True
         ):
             full_response += response.choices[0].delta.content or ""
             message_placeholder.markdown(full_response + "▌")

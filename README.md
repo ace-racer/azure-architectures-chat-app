@@ -13,3 +13,9 @@ A chat app with Azure architectures to discover answer to architecture questions
 1. Install [poetry](https://python-poetry.org/)
 2. `poetry install` to install all packages
 3. `make run-app` to run app
+
+
+# Sample conversation
+- what are some ways of supporting high number of concurrent users in Azure?
+- What if the users are distributed across Geographies?
+- What if there are specific geographies with more users only?
