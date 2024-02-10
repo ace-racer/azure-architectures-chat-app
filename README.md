@@ -43,3 +43,6 @@ The performance of the application itself could be further improved by extractin
 
 # Useful links
 - [Demo video](https://youtu.be/A-sTTBofIA4)
+
+# Sample application execution
+- ![Sample run](/docs/sample_run.png)
