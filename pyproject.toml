@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "az-architectures-chat-app"
-version = "0.1.0"
-description = "Azure architectures chat app"
+version = "0.2.0"
+description = "A chat app with Microsoft Azure architectures to discover answer to architecture questions on Azure"
 authors = ["Anurag Chatterjee <anuragchatterjee92@gmail.com>"]
 readme = "README.md"
 packages = [{include = "az_architectures_chat_app"}]

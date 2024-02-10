@@ -1,5 +1,5 @@
 # Microsoft Azure solution architecture brainstorming buddy
-A chat app with Azure architectures to discover answer to architecture questions on Azure
+A chat app with Microsoft Azure architectures to discover answer to architecture questions on Azure
 
 # Description
 Microsoft Azure solution architecture brainstorming buddy aims to find answers to your queries on Azure architectures especially on analytics use cases. 
@@ -25,9 +25,16 @@ The performance of the application itself could be further improved by extractin
 
 # How to run the chat application
 1. Install [poetry](https://python-poetry.org/)
-2. `poetry install` to install all packages
-3. `make run-app` to run app
+2. `poetry install` to install all packages required to run the chat application
+3. Set up ChromaDB index:
+    - Create a directory called `data` inside this project directory
+    - Download and extract the contents from [here](https://drive.google.com/drive/folders/1Kao9bWSSNpUIT8nRIph4fQlLJlBPc1Ui?usp=sharing) and copy the same inside the `data` directory
+    - Ensure the directory name after the above extraction is `chroma` inside the `data` directory
+4. `make run-app` to start the chat app
+5. Navigate to `http://localhost:8501/` in your favourite browser
 
+# Configurations
+- Update the `configs.py` file to update the current configurations
 
 # Sample conversation
 - What are some ways of supporting high number of concurrent users in Azure?
